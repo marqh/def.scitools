@@ -1,0 +1,291 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix gribs: <http://codes.wmo.int/def/gribcore/> .
+@prefix grib2s: <http://codes.wmo.int/def/grib2/> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
+
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <Field> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "Field" ;
+.
+<Field> a owl:Class ;
+	rdfs:subClassOf skos:Concept ;
+	skos:notation "Field" ;
+	rdfs:label "Field" .
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <DimCoord> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "DimCoord" ;
+.
+<DimCoord> a owl:Class ;
+	rdfs:subClassOf skos:Concept ;
+	skos:notation "DimCoord" ;
+	rdfs:label "DimCoord" .
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <AuxCoord> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "AuxCoord" ;
+.
+<AuxCoord> a owl:Class ;
+	rdfs:subClassOf skos:Concept ;
+	skos:notation "AuxCoord" ;
+	rdfs:label "AuxCoord" .
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <DimCoordAndDim> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "DimCoordAndDim" ;
+.
+<DimCoordAndDim> a owl:Class ;
+	rdfs:subClassOf skos:Concept ;
+	skos:notation "DimCoordAndDim" ;
+	rdfs:label "DimCoordAndDim" .
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <AuxCoordAndDims> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "AuxCoordAndDims" ;
+.
+<AuxCoordAndDims> a owl:Class ;
+	rdfs:subClassOf skos:Concept ;
+	skos:notation "AuxCoordAndDims" ;
+	rdfs:label "AuxCoordAndDims" .
+
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <CoordinateReferenceSystem> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "CoordinateReferenceSystem" ;
+.
+<CoordinateReferenceSystem> a owl:Class ;
+	rdfs:subClassOf skos:Concept ;
+	skos:notation "CoordSystem" ;
+	rdfs:label "CoordinateReferenceSystem" .
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <DerivedCoordinate> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "DerivedCoordinate" ;
+.
+<DerivedCoordinate> a owl:Class ;
+	rdfs:subClassOf skos:Concept ;
+	skos:notation "DerivedCoordinate" ;
+	rdfs:label "DerivedCoordinate" .
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <CellMeasure> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "CellMeasure" ;
+.
+<CellMeasure> a owl:Class ;
+	rdfs:subClassOf skos:Concept ;
+	skos:notation "CellMeasure" ;
+	rdfs:label "CellMeasure" .
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <CellMethod> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "CellMethod" ;
+.
+<CellMethod> a owl:Class ;
+	rdfs:subClassOf skos:Concept ;
+	skos:notation "CellMethod" ;
+	rdfs:label "CellMethod" .
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <standard_name> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "standard_name" ;
+.
+<standard_name> a owl:ObjectProperty ;
+	rdf:domain <Field>, <DimCoord>, <AuxCoord>, <DerivedCoordinate> ;
+	rdfs:range <http://vocab.nerc.ac.uk/standard_name> ;
+	skos:notation "standard_name" ;
+	rdfs:label "standard_name" .
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <long_name> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "long_name" ;
+.
+<long_name> a owl:ObjectProperty ;
+	rdf:domain <Field>, <DimCoord>, <AuxCoord>, <DerivedCoordinate> ;
+	rdfs:range rdf:Literal ;
+	skos:notation "long_name" ;
+	rdfs:label "long_name" .
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <units> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "units" ;
+.
+<units> a owl:ObjectProperty ;
+	rdf:domain <Field>, <DimCoord>, <AuxCoord>, <DerivedCoordinate> ;
+	rdfs:range rdf:Literal ;
+	skos:notation "units" ;
+	rdfs:label "units" .
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <cell_methods> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "cell_methods" ;
+.
+<cell_methods> a owl:ObjectProperty ;
+        rdf:domain  <Field> ;
+	rdfs:range <CellMethod> ;
+	skos:notation "cell_methods" ;
+	rdfs:label "cell_methods" .
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <dim_coord_and_dim> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "dim_coord_and_dim" ;
+.
+<dim_coord_and_dim> a owl:ObjectProperty ;
+        rdf:domain  <Field> ;
+	rdfs:range <DimCoordAndDim> ;
+	skos:notation "dim_coord_and_dim" ;
+	rdfs:label "dim_coord_and_dim" .
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <dims> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "dims" ;
+.
+<dims> a owl:ObjectProperty ;
+        rdf:domain <DimCoordAndDim>, <AuxCoordAndDims> ;
+	skos:notation "dims" ;
+	rdfs:label "dims" .
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <aux_coord_and_dims> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "aux_coord_and_dims" ;
+.
+<aux_coord_and_dims> a owl:ObjectProperty ;
+       rdf:domain  <Field> ;
+	rdfs:range <DimCoordAndDim>, <AuxCoordAndDims> ;
+	skos:notation "aux_coord_and_dims" ;
+	rdfs:label "aux_coord_and_dims" .
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <coord> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "coord" ;
+.
+<coord> a owl:ObjectProperty ;
+        rdf:domain <DimCoordAndDim>, <AuxCoordAndDims> ;
+	rdfs:range <DimCoord>, <AuxCoord> ;
+	skos:notation "coord" ;
+	rdfs:label "coord" .
+
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <coordinate_reference_system> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "crs" ;
+.
+<coordinate_reference_system> a owl:ObjectProperty ;
+        rdf:domain <DimCoord>, <AuxCoord>, <DerivedCoordinate> ;
+	rdfs:range <CoordinateReferenceSystem> ;
+	skos:notation "coord_system" ;
+	rdfs:label "coordinate_reference_system" .
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <points> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "points" ;
+.
+<points> a owl:ObjectProperty ;
+        rdf:domain <DimCoord>, <AuxCoord>, <DerivedCoordinate> ;
+	rdfs:range rdf:Literal ;
+	skos:notation "points" ;
+	rdfs:label "points" .
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <bounds> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "bounds" ;
+.
+<bounds> a owl:ObjectProperty ;
+        rdf:domain <DimCoord>, <AuxCoord>, <DerivedCoordinate> ;
+	rdfs:range rdf:Literal ;
+	skos:notation "bounds" ;
+	rdfs:label "bounds" .
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <dim_coord> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "dim_coord" ;
+.
+<dim_coord> a owl:ObjectProperty;
+	rdf:domain <Field> ;
+	rdfs:range <DimCoord> ;
+	skos:notation "dim_coord" ;
+	rdfs:label "dim_coord" .
+
+[]
+    a reg:RegisterItem ;
+    reg:definition
+        [ reg:entity <aux_coord> ] ;
+    reg:status reg:statusStable ;
+    reg:notation "aux_coord" ;
+.
+<aux_coord> a owl:ObjectProperty;
+	rdf:domain <Field> ;
+	rdfs:range <AuxCoord> ;
+	skos:notation "aux_coord" ;
+	rdfs:label "aux_coord" .

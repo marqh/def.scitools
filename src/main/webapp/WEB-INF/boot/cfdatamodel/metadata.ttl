@@ -1,0 +1,27 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix reg: <http://purl.org/linked-data/registry#> .
+@prefix qudt: <http://qudt.org/schema/qudt#> .
+@prefix gribs: <http://codes.wmo.int/def/gribcore/> .
+@prefix grib2s: <http://codes.wmo.int/def/grib2/> .
+@prefix ldp: <http://www.w3.org/ns/ldp#> .
+
+
+<_cfdatamodel>
+    a reg:RegisterItem ;
+    reg:definition [ reg:entity <cfdatamodel> ] ;
+    reg:itemClass reg:Register ;
+    reg:notation "cfdatamodel" ;
+    reg:status reg:statusStable ;
+    .
+<cfdatamodel>
+    a reg:Register , owl:Ontology ;
+    rdfs:label "SciTools' CF Data Model" ;
+    dct:description "The conceptual data model as implemented in the SciTools Iris software library."@en ;
+    rdfs:seeAlso <http://www.scitools.org.uk/iris/docs/latest/iris/iris.html> ;
+    .
