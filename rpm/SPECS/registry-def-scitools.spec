@@ -1,7 +1,7 @@
-Name:		registry-config-base
+Name:		registry-def-scitools
 Version:	1.0
-Release:	1
-Summary:	Registry-core linked data registry
+Release:	2
+Summary:	Scitools linked data registry
 
 License:	apache
 URL:		https://github.com/ukgovld/registry-config-base
@@ -13,8 +13,10 @@ Requires:       java-1.7.0-openjdk
 Requires:       nginx
 Requires:       tomcat7
 
+Obsoletes:      scitcf
+
 %description
-Configuration of ukgov-ld linked data registry
+Configuration of def.scitools.org.uk linked data registry
 
 %prep
 %setup -q
@@ -24,7 +26,8 @@ Configuration of ukgov-ld linked data registry
 rm -rf $RPM_BUILD_ROOT
 install -D etc/sudoers.d/reg-sudoers.conf $RPM_BUILD_ROOT/etc/sudoers.d/reg-sudoers.conf
 install -D etc/nginx/conf.d/reg-nginx.conf $RPM_BUILD_ROOT/etc/nginx/conf.d/reg-nginx.conf
-install -D -d opt/ldregistry $RPM_BUILD_ROOT/opt/ldregistry
+mkdir -p $RPM_BUILD_ROOT/opt/
+cp -pr opt/ldregistry $RPM_BUILD_ROOT/opt/ldregistry
 install -D var/lib/tomcat7/webapps/ROOT.war $RPM_BUILD_ROOT/var/lib/tomcat7/webapps/ROOT.war
 
 %pre
